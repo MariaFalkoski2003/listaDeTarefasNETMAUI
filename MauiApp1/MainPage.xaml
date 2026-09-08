@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <Grid Padding="20" RowSpacing="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Text="Minhas Tarefas"
+               FontSize="24"
+               FontAttributes="Bold" />
+
+        <Grid Grid.Row="1" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Entry x:Name="TarefaEntry" Grid.Column="0" />
+
+            <Button Grid.Column="1"
+                    Text="Adicionar"
+                    Clicked="AdicionarButton_Clicked" />
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="2" x:Name="ListaTarefasLayout" Spacing="5" />
+        
+        <!-- A quarta linha é o contador -->
+        
+        <Label Grid.Row="3"
+               x:Name="ContadorLabel"
+               Text="0 de 0 tarefas concluídas" />
+
+    </Grid>
+
+</ContentPage>
